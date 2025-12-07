@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*.sqlite3
+
+# Node & frontend
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+dist/
+build/
+
+# System / editor
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+*.bak
+*.tmp
+
+# Git & Docker
+.git/
+.gitignore
+.dockerignore
+
+# OS files
+Thumbs.db
+
+# Environment variables
+.env
+*.env
+
+.env_file
