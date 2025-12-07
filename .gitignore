@@ -73,3 +73,5 @@ instance/
 .DS_Store
 Thumbs.db
 
+
+.env_file

@@ -12,6 +12,11 @@ services:
       - "8000:8000"
     networks:
       - app_net
+    depends_on:
+      - redis
+      - database
+    env_file:
+      - ./.env_file     
 
   redis:
     image: redis:7
@@ -20,9 +25,24 @@ services:
       - redis_log:/var/log/redis
     networks:
       - app_net
+    env_file:
+      - ./.env_file     
+
+  database:
+    image: postgres:16
+    container_name: demo_database
+    env_file:
+      - ./.env_file      
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - app_net
 
 volumes:
   redis_log:
+  db_data:
 
 networks:
   app_net:
